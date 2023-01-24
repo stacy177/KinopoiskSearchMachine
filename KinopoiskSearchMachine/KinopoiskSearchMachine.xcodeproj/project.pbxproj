@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33429805AE400F8750D /* AppDelegate.swift */; };
+		5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33629805AE400F8750D /* SceneDelegate.swift */; };
+		5DC8F33929805AE400F8750D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33829805AE400F8750D /* ViewController.swift */; };
+		5DC8F33C29805AE400F8750D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33A29805AE400F8750D /* Main.storyboard */; };
+		5DC8F33E29805AE500F8750D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33D29805AE500F8750D /* Assets.xcassets */; };
+		5DC8F34129805AE500F8750D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */; };
+		5DC8F34C29805AE500F8750D /* KinopoiskSearchMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F34B29805AE500F8750D /* KinopoiskSearchMachineTests.swift */; };
+		5DC8F35629805AE500F8750D /* KinopoiskSearchMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F35529805AE500F8750D /* KinopoiskSearchMachineUITests.swift */; };
+		5DC8F35829805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F35729805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DC8F34829805AE500F8750D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DC8F32929805AE400F8750D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DC8F33029805AE400F8750D;
+			remoteInfo = KinopoiskSearchMachine;
+		};
+		5DC8F35229805AE500F8750D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DC8F32929805AE400F8750D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DC8F33029805AE400F8750D;
+			remoteInfo = KinopoiskSearchMachine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinopoiskSearchMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC8F33429805AE400F8750D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DC8F33629805AE400F8750D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5DC8F33829805AE400F8750D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5DC8F33B29805AE400F8750D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DC8F33D29805AE500F8750D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DC8F34029805AE500F8750D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DC8F34229805AE500F8750D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DC8F34729805AE500F8750D /* KinopoiskSearchMachineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinopoiskSearchMachineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC8F34B29805AE500F8750D /* KinopoiskSearchMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopoiskSearchMachineTests.swift; sourceTree = "<group>"; };
+		5DC8F35129805AE500F8750D /* KinopoiskSearchMachineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinopoiskSearchMachineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC8F35529805AE500F8750D /* KinopoiskSearchMachineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopoiskSearchMachineUITests.swift; sourceTree = "<group>"; };
+		5DC8F35729805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopoiskSearchMachineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DC8F32E29805AE400F8750D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34429805AE500F8750D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34E29805AE500F8750D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DC8F32829805AE400F8750D = {
+			isa = PBXGroup;
+			children = (
+				5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */,
+				5DC8F34A29805AE500F8750D /* KinopoiskSearchMachineTests */,
+				5DC8F35429805AE500F8750D /* KinopoiskSearchMachineUITests */,
+				5DC8F33229805AE400F8750D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DC8F33229805AE400F8750D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */,
+				5DC8F34729805AE500F8750D /* KinopoiskSearchMachineTests.xctest */,
+				5DC8F35129805AE500F8750D /* KinopoiskSearchMachineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */ = {
+			isa = PBXGroup;
+			children = (
+				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
+				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
+				5DC8F33829805AE400F8750D /* ViewController.swift */,
+				5DC8F33A29805AE400F8750D /* Main.storyboard */,
+				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
+				5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */,
+				5DC8F34229805AE500F8750D /* Info.plist */,
+			);
+			path = KinopoiskSearchMachine;
+			sourceTree = "<group>";
+		};
+		5DC8F34A29805AE500F8750D /* KinopoiskSearchMachineTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DC8F34B29805AE500F8750D /* KinopoiskSearchMachineTests.swift */,
+			);
+			path = KinopoiskSearchMachineTests;
+			sourceTree = "<group>";
+		};
+		5DC8F35429805AE500F8750D /* KinopoiskSearchMachineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5DC8F35529805AE500F8750D /* KinopoiskSearchMachineUITests.swift */,
+				5DC8F35729805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift */,
+			);
+			path = KinopoiskSearchMachineUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DC8F33029805AE400F8750D /* KinopoiskSearchMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DC8F35B29805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachine" */;
+			buildPhases = (
+				5DC8F32D29805AE400F8750D /* Sources */,
+				5DC8F32E29805AE400F8750D /* Frameworks */,
+				5DC8F32F29805AE400F8750D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KinopoiskSearchMachine;
+			productName = KinopoiskSearchMachine;
+			productReference = 5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DC8F34629805AE500F8750D /* KinopoiskSearchMachineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DC8F35E29805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachineTests" */;
+			buildPhases = (
+				5DC8F34329805AE500F8750D /* Sources */,
+				5DC8F34429805AE500F8750D /* Frameworks */,
+				5DC8F34529805AE500F8750D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DC8F34929805AE500F8750D /* PBXTargetDependency */,
+			);
+			name = KinopoiskSearchMachineTests;
+			productName = KinopoiskSearchMachineTests;
+			productReference = 5DC8F34729805AE500F8750D /* KinopoiskSearchMachineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5DC8F35029805AE500F8750D /* KinopoiskSearchMachineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DC8F36129805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachineUITests" */;
+			buildPhases = (
+				5DC8F34D29805AE500F8750D /* Sources */,
+				5DC8F34E29805AE500F8750D /* Frameworks */,
+				5DC8F34F29805AE500F8750D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DC8F35329805AE500F8750D /* PBXTargetDependency */,
+			);
+			name = KinopoiskSearchMachineUITests;
+			productName = KinopoiskSearchMachineUITests;
+			productReference = 5DC8F35129805AE500F8750D /* KinopoiskSearchMachineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DC8F32929805AE400F8750D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					5DC8F33029805AE400F8750D = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					5DC8F34629805AE500F8750D = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5DC8F33029805AE400F8750D;
+					};
+					5DC8F35029805AE500F8750D = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5DC8F33029805AE400F8750D;
+					};
+				};
+			};
+			buildConfigurationList = 5DC8F32C29805AE400F8750D /* Build configuration list for PBXProject "KinopoiskSearchMachine" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DC8F32829805AE400F8750D;
+			productRefGroup = 5DC8F33229805AE400F8750D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DC8F33029805AE400F8750D /* KinopoiskSearchMachine */,
+				5DC8F34629805AE500F8750D /* KinopoiskSearchMachineTests */,
+				5DC8F35029805AE500F8750D /* KinopoiskSearchMachineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DC8F32F29805AE400F8750D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC8F34129805AE500F8750D /* LaunchScreen.storyboard in Resources */,
+				5DC8F33E29805AE500F8750D /* Assets.xcassets in Resources */,
+				5DC8F33C29805AE400F8750D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34529805AE500F8750D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34F29805AE500F8750D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DC8F32D29805AE400F8750D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC8F33929805AE400F8750D /* ViewController.swift in Sources */,
+				5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */,
+				5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34329805AE500F8750D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC8F34C29805AE500F8750D /* KinopoiskSearchMachineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC8F34D29805AE500F8750D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC8F35829805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift in Sources */,
+				5DC8F35629805AE500F8750D /* KinopoiskSearchMachineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DC8F34929805AE500F8750D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DC8F33029805AE400F8750D /* KinopoiskSearchMachine */;
+			targetProxy = 5DC8F34829805AE500F8750D /* PBXContainerItemProxy */;
+		};
+		5DC8F35329805AE500F8750D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DC8F33029805AE400F8750D /* KinopoiskSearchMachine */;
+			targetProxy = 5DC8F35229805AE500F8750D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DC8F33A29805AE400F8750D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DC8F33B29805AE400F8750D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DC8F34029805AE500F8750D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DC8F35929805AE500F8750D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DC8F35A29805AE500F8750D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DC8F35C29805AE500F8750D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5DC8F35D29805AE500F8750D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5DC8F35F29805AE500F8750D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KinopoiskSearchMachine.app/KinopoiskSearchMachine";
+			};
+			name = Debug;
+		};
+		5DC8F36029805AE500F8750D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KinopoiskSearchMachine.app/KinopoiskSearchMachine";
+			};
+			name = Release;
+		};
+		5DC8F36229805AE500F8750D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KinopoiskSearchMachine;
+			};
+			name = Debug;
+		};
+		5DC8F36329805AE500F8750D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YM5258CN94;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KinopoiskSearchMachine;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DC8F32C29805AE400F8750D /* Build configuration list for PBXProject "KinopoiskSearchMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC8F35929805AE500F8750D /* Debug */,
+				5DC8F35A29805AE500F8750D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DC8F35B29805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC8F35C29805AE500F8750D /* Debug */,
+				5DC8F35D29805AE500F8750D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DC8F35E29805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC8F35F29805AE500F8750D /* Debug */,
+				5DC8F36029805AE500F8750D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DC8F36129805AE500F8750D /* Build configuration list for PBXNativeTarget "KinopoiskSearchMachineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC8F36229805AE500F8750D /* Debug */,
+				5DC8F36329805AE500F8750D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DC8F32929805AE400F8750D /* Project object */;
+}
