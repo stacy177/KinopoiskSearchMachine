@@ -135,15 +135,8 @@
 		5D62EE842982B1F300C146BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		5D62EE852983041300C146BB /* Cells */ = {
-			isa = PBXGroup;
-			children = (
 				5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */,
+				5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -151,8 +144,6 @@
 		5DC8F32829805AE400F8750D = {
 			isa = PBXGroup;
 			children = (
-				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
-				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
 				5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */,
 				5DC8F34A29805AE500F8750D /* KinopoiskSearchMachineTests */,
 				5DC8F35429805AE500F8750D /* KinopoiskSearchMachineUITests */,
@@ -173,10 +164,13 @@
 		5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */ = {
 			isa = PBXGroup;
 			children = (
+				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
+				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
 				729737862980662D00A93960 /* GenreSearchScreen */,
 				72973775298065EF00A93960 /* ActorSearchScreen */,
 				729737642980644C00A93960 /* MainScreen */,
 				7297375E298061DC00A93960 /* TabBar.swift */,
+				5D62EE842982B1F300C146BB /* Cells */,
 				729737602980624F00A93960 /* ViewController2.swift */,
 				5DC8F33829805AE400F8750D /* ViewController.swift */,
 				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
@@ -211,7 +205,6 @@
 				72973767298065E500A93960 /* MainRouter.swift */,
 				72973768298065E500A93960 /* MainModels.swift */,
 				72973769298065E500A93960 /* MainViewController.swift */,
-				5D62EE842982B1F300C146BB /* Cells */,
 				7297376A298065E500A93960 /* MainProtocols.swift */,
 				7297376B298065E500A93960 /* MainAssembly.swift */,
 				7297376C298065E500A93960 /* MainInteractor.swift */,
@@ -242,7 +235,6 @@
 				729737892980668200A93960 /* GenreSearchRouter.swift */,
 				7297378A2980668200A93960 /* GenreSearchModels.swift */,
 				7297378B2980668200A93960 /* GenreSearchViewController.swift */,
-				5D62EE852983041300C146BB /* Cells */,
 				7297378C2980668200A93960 /* GenreSearchProtocols.swift */,
 				7297378D2980668200A93960 /* GenreSearchAssembly.swift */,
 				7297378E2980668200A93960 /* GenreSearchInteractor.swift */,

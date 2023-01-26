@@ -6,6 +6,9 @@ import UIKit
 import SnapKit
 
 final class MainVerticalCollectionViewCell: UICollectionViewCell {
+    static var identifier: String {
+        String(describing: self)
+    }
     private let imageView = UIImageView()
     private let title = UILabel()
     private let genre = UILabel()

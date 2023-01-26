@@ -6,8 +6,20 @@ import UIKit
 import SnapKit
 
 final class MainViewController: ViewController, MainDisplayLogic {
-    
-    private let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+
+    private func createLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
+        layout.itemSize = CGSize(width: (width - 60) , height: width)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 50
+
+        return layout
+    }
+
+    private var collection: UICollectionView!
     
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
@@ -28,7 +40,7 @@ final class MainViewController: ViewController, MainDisplayLogic {
         setupUI()
         view.backgroundColor = .red
 //        collection.register(MainHorizontallyCollectionViewCell.self, forCellWithReuseIdentifier: MainHorizontallyCollectionViewCell.reusedId)
-        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        collection.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
         collection.dataSource = self
         collection.delegate = self
         collection.reloadData()
@@ -56,8 +68,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainHorizontallyCollectionViewCell.reusedId, for: indexPath) as! MainHorizontallyCollectionViewCell
-        let cell = UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
         cell.backgroundColor = .blue
         return cell
     }
@@ -69,9 +80,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController {
     private func setupUI() {
+        collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        view.addSubview(collection)
         collection.backgroundColor = .lightGray
         collection.isScrollEnabled = true
-        view.addSubview(collection)
         collection.frame = view.bounds
 //        collection.snp.makeConstraints { make in
 //            make.top.equalToSuperview().inset(50)
