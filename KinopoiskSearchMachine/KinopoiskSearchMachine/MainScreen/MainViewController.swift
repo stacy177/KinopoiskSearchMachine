@@ -7,18 +7,6 @@ import SnapKit
 
 final class MainViewController: ViewController, MainDisplayLogic {
 
-    private func createLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
-        layout.itemSize = CGSize(width: (width - 60) , height: width)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 50
-
-        return layout
-    }
-
     private var collection: UICollectionView!
     
     private let interactor: MainBusinessLogic
@@ -39,7 +27,6 @@ final class MainViewController: ViewController, MainDisplayLogic {
         initForm()
         setupUI()
         view.backgroundColor = .red
-//        collection.register(MainHorizontallyCollectionViewCell.self, forCellWithReuseIdentifier: MainHorizontallyCollectionViewCell.reusedId)
         collection.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
         collection.dataSource = self
         collection.delegate = self
@@ -53,23 +40,35 @@ final class MainViewController: ViewController, MainDisplayLogic {
     // MARK: - Private
 
     private func initForm() {
-        interactor.requestInitForm(Main.InitForm.Request())
+        interactor.requestInitForm(Main.InitForm.Request(image: "", title: "", year: 0, genre: ""))
+    }
+    
+    private func createLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let width = UIScreen.main.bounds.width / 2
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
+        layout.itemSize = CGSize(width: (width - 60) , height: width)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 50
+
+        return layout
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
-        cell.backgroundColor = .blue
+        cell.backgroundColor = .systemPink
         return cell
     }
     
@@ -85,11 +84,5 @@ extension MainViewController {
         collection.backgroundColor = .lightGray
         collection.isScrollEnabled = true
         collection.frame = view.bounds
-//        collection.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(50)
-//            make.left.equalToSuperview().inset(0)
-//            make.right.equalToSuperview().inset(0)
-//            make.bottom.equalToSuperview().inset(0)
-//        }
     }
 }
