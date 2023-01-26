@@ -4,6 +4,9 @@
 
 import UIKit
 
+protocol MainRoutingLogic {}
+protocol MainDataStore {}
+
 final class MainRouter: MainRoutingLogic {
     weak var viewController: UIViewController?
     private let dataStore: MainDataStore
@@ -13,10 +16,4 @@ final class MainRouter: MainRoutingLogic {
     }
 }
 
-private extension MainRouter {
-//    func passDataTo_() {
-//        source: MainDataStore,
-//        destination: inout SomewhereDataStore
-//    ) {
-//    }
-}
+private extension MainRouter { }

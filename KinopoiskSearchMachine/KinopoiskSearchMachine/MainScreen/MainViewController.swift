@@ -5,6 +5,10 @@
 import UIKit
 import SnapKit
 
+protocol MainDisplayLogic: AnyObject {
+    func displayInitForm(_ viewModel: Main.InitForm.ViewModel)
+}
+
 final class MainViewController: ViewController, MainDisplayLogic {
 
     private var collection: UICollectionView!
@@ -26,11 +30,8 @@ final class MainViewController: ViewController, MainDisplayLogic {
         super.viewDidLoad()
         initForm()
         setupUI()
+        setupCollection()
         view.backgroundColor = .red
-        collection.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
-        collection.dataSource = self
-        collection.delegate = self
-        collection.reloadData()
     }
 
     // MARK: - MainDisplayLogic
@@ -43,6 +44,13 @@ final class MainViewController: ViewController, MainDisplayLogic {
         interactor.requestInitForm(Main.InitForm.Request(image: "", title: "", year: 0, genre: ""))
     }
     
+    private func setupCollection() {
+        collection.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
+        collection.dataSource = self
+        collection.delegate = self
+        collection.reloadData()
+    }
+    
     private func createLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -50,7 +58,7 @@ final class MainViewController: ViewController, MainDisplayLogic {
         layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
         layout.itemSize = CGSize(width: (width - 60) , height: width)
         layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 50
+        layout.minimumLineSpacing = 70
 
         return layout
     }
@@ -63,12 +71,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
-        cell.backgroundColor = .systemPink
+        cell.backgroundColor = .clear
         return cell
     }
     

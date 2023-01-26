@@ -30,8 +30,10 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .yellow
         title.numberOfLines = 2
         title.text = "Хроники нарнии: Лев, колдунья и волшебный шкаф"
+        title.font = UIFont.systemFont(ofSize: 10)
         title.textColor = .black
         genre.text = "фэнтези"
+        genre.font = UIFont.systemFont(ofSize: 10)
         genre.textColor = .gray
         
         imageView.snp.makeConstraints { make in

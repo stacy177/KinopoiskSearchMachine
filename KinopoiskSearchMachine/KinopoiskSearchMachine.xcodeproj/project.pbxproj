@@ -21,11 +21,9 @@
 		7297375F298061DC00A93960 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297375E298061DC00A93960 /* TabBar.swift */; };
 		729737612980624F00A93960 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729737602980624F00A93960 /* ViewController2.swift */; };
 		7297376D298065E500A93960 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973765298065E500A93960 /* MainPresenter.swift */; };
-		7297376E298065E500A93960 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973766298065E500A93960 /* MainWorker.swift */; };
 		7297376F298065E500A93960 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973767298065E500A93960 /* MainRouter.swift */; };
 		72973770298065E500A93960 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973768298065E500A93960 /* MainModels.swift */; };
 		72973771298065E500A93960 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973769298065E500A93960 /* MainViewController.swift */; };
-		72973772298065E500A93960 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297376A298065E500A93960 /* MainProtocols.swift */; };
 		72973773298065E500A93960 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297376B298065E500A93960 /* MainAssembly.swift */; };
 		72973774298065E500A93960 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297376C298065E500A93960 /* MainInteractor.swift */; };
 		7297377E2980662700A93960 /* ActorSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729737762980662700A93960 /* ActorSearchPresenter.swift */; };
@@ -81,11 +79,9 @@
 		7297375E298061DC00A93960 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		729737602980624F00A93960 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		72973765298065E500A93960 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		72973766298065E500A93960 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		72973767298065E500A93960 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		72973768298065E500A93960 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
 		72973769298065E500A93960 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7297376A298065E500A93960 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		7297376B298065E500A93960 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		7297376C298065E500A93960 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		729737762980662700A93960 /* ActorSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorSearchPresenter.swift; sourceTree = "<group>"; };
@@ -135,8 +131,8 @@
 		5D62EE842982B1F300C146BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */,
 				5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */,
+				5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -200,14 +196,12 @@
 		729737642980644C00A93960 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				72973769298065E500A93960 /* MainViewController.swift */,
+				7297376C298065E500A93960 /* MainInteractor.swift */,
 				72973765298065E500A93960 /* MainPresenter.swift */,
-				72973766298065E500A93960 /* MainWorker.swift */,
 				72973767298065E500A93960 /* MainRouter.swift */,
 				72973768298065E500A93960 /* MainModels.swift */,
-				72973769298065E500A93960 /* MainViewController.swift */,
-				7297376A298065E500A93960 /* MainProtocols.swift */,
 				7297376B298065E500A93960 /* MainAssembly.swift */,
-				7297376C298065E500A93960 /* MainInteractor.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -384,7 +378,6 @@
 				729737802980662700A93960 /* ActorSearchRouter.swift in Sources */,
 				729737842980662700A93960 /* ActorSearchAssembly.swift in Sources */,
 				7297378F2980668200A93960 /* GenreSearchPresenter.swift in Sources */,
-				72973772298065E500A93960 /* MainProtocols.swift in Sources */,
 				5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */,
 				729737942980668200A93960 /* GenreSearchProtocols.swift in Sources */,
 				72973770298065E500A93960 /* MainModels.swift in Sources */,
@@ -395,7 +388,6 @@
 				729737812980662700A93960 /* ActorSearchModels.swift in Sources */,
 				5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */,
 				5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */,
-				7297376E298065E500A93960 /* MainWorker.swift in Sources */,
 				5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */,
 				7297375F298061DC00A93960 /* TabBar.swift in Sources */,
 				729737822980662700A93960 /* ActorSearchViewController.swift in Sources */,
