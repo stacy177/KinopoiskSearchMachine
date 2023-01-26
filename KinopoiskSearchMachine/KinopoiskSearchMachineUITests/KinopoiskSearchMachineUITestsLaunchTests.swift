@@ -1,8 +1,5 @@
 //
 //  KinopoiskSearchMachineUITestsLaunchTests.swift
-//  KinopoiskSearchMachineUITests
-//
-//  Created by Анастасия on 24.01.2023.
 //
 
 import XCTest

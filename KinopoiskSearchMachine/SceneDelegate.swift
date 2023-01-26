@@ -1,8 +1,5 @@
 //
 //  SceneDelegate.swift
-//  KinopoiskSearchMachine
-//
-//  Created by Анастасия on 24.01.2023.
 //
 
 import UIKit

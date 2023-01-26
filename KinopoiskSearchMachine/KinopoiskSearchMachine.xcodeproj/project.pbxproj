@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D62EE7F2981995100C146BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D62EE7E2981995100C146BB /* SnapKit */; };
+		5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */; };
+		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
 		5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33429805AE400F8750D /* AppDelegate.swift */; };
 		5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33629805AE400F8750D /* SceneDelegate.swift */; };
 		5DC8F33929805AE400F8750D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33829805AE400F8750D /* ViewController.swift */; };
@@ -61,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVerticalCollectionViewCell.swift; sourceTree = "<group>"; };
 		5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinopoiskSearchMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC8F33429805AE400F8750D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC8F33629805AE400F8750D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D62EE7F2981995100C146BB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +132,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D62EE842982B1F300C146BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5D62EE852983041300C146BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5DC8F32829805AE400F8750D = {
 			isa = PBXGroup;
 			children = (
+				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
+				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
 				5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */,
 				5DC8F34A29805AE500F8750D /* KinopoiskSearchMachineTests */,
 				5DC8F35429805AE500F8750D /* KinopoiskSearchMachineUITests */,
@@ -152,8 +176,6 @@
 				729737862980662D00A93960 /* GenreSearchScreen */,
 				72973775298065EF00A93960 /* ActorSearchScreen */,
 				729737642980644C00A93960 /* MainScreen */,
-				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
-				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
 				7297375E298061DC00A93960 /* TabBar.swift */,
 				729737602980624F00A93960 /* ViewController2.swift */,
 				5DC8F33829805AE400F8750D /* ViewController.swift */,
@@ -189,6 +211,7 @@
 				72973767298065E500A93960 /* MainRouter.swift */,
 				72973768298065E500A93960 /* MainModels.swift */,
 				72973769298065E500A93960 /* MainViewController.swift */,
+				5D62EE842982B1F300C146BB /* Cells */,
 				7297376A298065E500A93960 /* MainProtocols.swift */,
 				7297376B298065E500A93960 /* MainAssembly.swift */,
 				7297376C298065E500A93960 /* MainInteractor.swift */,
@@ -219,6 +242,7 @@
 				729737892980668200A93960 /* GenreSearchRouter.swift */,
 				7297378A2980668200A93960 /* GenreSearchModels.swift */,
 				7297378B2980668200A93960 /* GenreSearchViewController.swift */,
+				5D62EE852983041300C146BB /* Cells */,
 				7297378C2980668200A93960 /* GenreSearchProtocols.swift */,
 				7297378D2980668200A93960 /* GenreSearchAssembly.swift */,
 				7297378E2980668200A93960 /* GenreSearchInteractor.swift */,
@@ -242,6 +266,9 @@
 			dependencies = (
 			);
 			name = KinopoiskSearchMachine;
+			packageProductDependencies = (
+				5D62EE7E2981995100C146BB /* SnapKit */,
+			);
 			productName = KinopoiskSearchMachine;
 			productReference = 5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */;
 			productType = "com.apple.product-type.application";
@@ -315,8 +342,8 @@
 			);
 			mainGroup = 5DC8F32829805AE400F8750D;
 			packageReferences = (
-				729737622980641300A93960 /* XCRemoteSwiftPackageReference "Moya" */,
-				729737632980644200A93960 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5D68B1E829818EEF00B5FFA5 /* XCRemoteSwiftPackageReference "Moya" */,
+				5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 5DC8F33229805AE400F8750D /* Products */;
 			projectDirPath = "";
@@ -366,6 +393,7 @@
 				729737842980662700A93960 /* ActorSearchAssembly.swift in Sources */,
 				7297378F2980668200A93960 /* GenreSearchPresenter.swift in Sources */,
 				72973772298065E500A93960 /* MainProtocols.swift in Sources */,
+				5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */,
 				729737942980668200A93960 /* GenreSearchProtocols.swift in Sources */,
 				72973770298065E500A93960 /* MainModels.swift in Sources */,
 				729737832980662700A93960 /* ActorSearchProtocols.swift in Sources */,
@@ -376,6 +404,7 @@
 				5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */,
 				5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */,
 				7297376E298065E500A93960 /* MainWorker.swift in Sources */,
+				5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */,
 				7297375F298061DC00A93960 /* TabBar.swift in Sources */,
 				729737822980662700A93960 /* ActorSearchViewController.swift in Sources */,
 				729737852980662700A93960 /* ActorSearchInteractor.swift in Sources */,
@@ -559,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P99KL2FGYB;
+				DEVELOPMENT_TEAM = YM5258CN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -572,7 +601,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachine";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -587,7 +616,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P99KL2FGYB;
+				DEVELOPMENT_TEAM = YM5258CN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -600,7 +629,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-23.KinopoiskSearchMachine";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -726,23 +755,31 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		729737622980641300A93960 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		5D68B1E829818EEF00B5FFA5 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		729737632980644200A93960 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit#installation";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D62EE7E2981995100C146BB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5DC8F32929805AE400F8750D /* Project object */;
 }
