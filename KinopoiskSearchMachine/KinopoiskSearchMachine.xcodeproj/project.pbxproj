@@ -12,14 +12,12 @@
 		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
 		5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33429805AE400F8750D /* AppDelegate.swift */; };
 		5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33629805AE400F8750D /* SceneDelegate.swift */; };
-		5DC8F33929805AE400F8750D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33829805AE400F8750D /* ViewController.swift */; };
 		5DC8F33E29805AE500F8750D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33D29805AE500F8750D /* Assets.xcassets */; };
 		5DC8F34129805AE500F8750D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */; };
 		5DC8F34C29805AE500F8750D /* KinopoiskSearchMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F34B29805AE500F8750D /* KinopoiskSearchMachineTests.swift */; };
 		5DC8F35629805AE500F8750D /* KinopoiskSearchMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F35529805AE500F8750D /* KinopoiskSearchMachineUITests.swift */; };
 		5DC8F35829805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F35729805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift */; };
 		7297375F298061DC00A93960 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297375E298061DC00A93960 /* TabBar.swift */; };
-		729737612980624F00A93960 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729737602980624F00A93960 /* ViewController2.swift */; };
 		7297376D298065E500A93960 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973765298065E500A93960 /* MainPresenter.swift */; };
 		7297376F298065E500A93960 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973767298065E500A93960 /* MainRouter.swift */; };
 		72973770298065E500A93960 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973768298065E500A93960 /* MainModels.swift */; };
@@ -67,7 +65,6 @@
 		5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinopoiskSearchMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC8F33429805AE400F8750D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC8F33629805AE400F8750D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5DC8F33829805AE400F8750D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5DC8F33D29805AE500F8750D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DC8F34029805AE500F8750D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DC8F34229805AE500F8750D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		5DC8F35529805AE500F8750D /* KinopoiskSearchMachineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopoiskSearchMachineUITests.swift; sourceTree = "<group>"; };
 		5DC8F35729805AE500F8750D /* KinopoiskSearchMachineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopoiskSearchMachineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7297375E298061DC00A93960 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		729737602980624F00A93960 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		72973765298065E500A93960 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		72973767298065E500A93960 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		72973768298065E500A93960 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
@@ -167,8 +163,6 @@
 				729737642980644C00A93960 /* MainScreen */,
 				7297375E298061DC00A93960 /* TabBar.swift */,
 				5D62EE842982B1F300C146BB /* Cells */,
-				729737602980624F00A93960 /* ViewController2.swift */,
-				5DC8F33829805AE400F8750D /* ViewController.swift */,
 				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
 				5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */,
 				5DC8F34229805AE500F8750D /* Info.plist */,
@@ -373,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				729737612980624F00A93960 /* ViewController2.swift in Sources */,
 				7297376F298065E500A93960 /* MainRouter.swift in Sources */,
 				729737802980662700A93960 /* ActorSearchRouter.swift in Sources */,
 				729737842980662700A93960 /* ActorSearchAssembly.swift in Sources */,
@@ -383,7 +376,6 @@
 				72973770298065E500A93960 /* MainModels.swift in Sources */,
 				729737832980662700A93960 /* ActorSearchProtocols.swift in Sources */,
 				7297376D298065E500A93960 /* MainPresenter.swift in Sources */,
-				5DC8F33929805AE400F8750D /* ViewController.swift in Sources */,
 				729737912980668200A93960 /* GenreSearchRouter.swift in Sources */,
 				729737812980662700A93960 /* ActorSearchModels.swift in Sources */,
 				5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */,

@@ -9,7 +9,7 @@ protocol MainDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Main.InitForm.ViewModel)
 }
 
-final class MainViewController: ViewController, MainDisplayLogic {
+final class MainViewController: UIViewController, MainDisplayLogic {
 
     private var collection: UICollectionView!
     
