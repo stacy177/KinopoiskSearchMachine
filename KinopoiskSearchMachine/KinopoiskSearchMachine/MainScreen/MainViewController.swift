@@ -163,6 +163,10 @@ extension MainViewController {
         collection = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
         view.addSubview(collection)
         collection?.backgroundColor = .lightGray
-        collection.frame = view.bounds
+        collection.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.left.right.equalToSuperview()
+        }
     }
 }
