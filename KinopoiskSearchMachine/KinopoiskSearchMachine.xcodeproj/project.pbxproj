@@ -10,6 +10,7 @@
 		5D62EE7F2981995100C146BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D62EE7E2981995100C146BB /* SnapKit */; };
 		5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */; };
 		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
+		5D62EE8729855F7300C146BB /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE8629855F7300C146BB /* CategoryHeaderView.swift */; };
 		5DC8F33529805AE400F8750D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33429805AE400F8750D /* AppDelegate.swift */; };
 		5DC8F33729805AE400F8750D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC8F33629805AE400F8750D /* SceneDelegate.swift */; };
 		5DC8F33E29805AE500F8750D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC8F33D29805AE500F8750D /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVerticalCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D62EE8629855F7300C146BB /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinopoiskSearchMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC8F33429805AE400F8750D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC8F33629805AE400F8750D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */,
 				5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */,
+				5D62EE8629855F7300C146BB /* CategoryHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				7297377E2980662700A93960 /* ActorSearchPresenter.swift in Sources */,
 				72973773298065E500A93960 /* MainAssembly.swift in Sources */,
 				72973771298065E500A93960 /* MainViewController.swift in Sources */,
+				5D62EE8729855F7300C146BB /* CategoryHeaderView.swift in Sources */,
 				7297377F2980662700A93960 /* ActorSearchWorker.swift in Sources */,
 				729737962980668200A93960 /* GenreSearchInteractor.swift in Sources */,
 				729737932980668200A93960 /* GenreSearchViewController.swift in Sources */,

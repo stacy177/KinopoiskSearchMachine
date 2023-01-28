@@ -4,7 +4,7 @@
 
 import UIKit
 
-final class GenreSearchViewController: ViewController, GenreSearchDisplayLogic {
+final class GenreSearchViewController: UIViewController, GenreSearchDisplayLogic {
     private let interactor: GenreSearchBusinessLogic
     private let router: GenreSearchRoutingLogic
 

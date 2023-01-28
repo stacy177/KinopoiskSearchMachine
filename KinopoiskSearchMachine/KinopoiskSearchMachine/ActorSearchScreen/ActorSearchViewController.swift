@@ -4,7 +4,7 @@
 
 import UIKit
 
-final class ActorSearchViewController: ViewController, ActorSearchDisplayLogic {
+final class ActorSearchViewController: UIViewController, ActorSearchDisplayLogic {
     private let interactor: ActorSearchBusinessLogic
     private let router: ActorSearchRoutingLogic
 

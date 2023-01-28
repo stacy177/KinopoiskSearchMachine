@@ -28,8 +28,8 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initForm()
         setupUI()
+        initForm()
         setupCollection()
         view.backgroundColor = .red
     }
@@ -45,33 +45,109 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     }
     
     private func setupCollection() {
-        collection.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
-        collection.dataSource = self
-        collection.delegate = self
-        collection.reloadData()
+        collection?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
+        collection?.dataSource = self
+        collection?.delegate = self
+        collection?.reloadData()
     }
     
-    private func createLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let width = UIScreen.main.bounds.width / 2
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
-        layout.itemSize = CGSize(width: (width - 60) , height: width)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 70
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
 
-        return layout
+        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+
+         switch sectionNumber {
+
+         case 0: return self.firstLayoutSection()
+         case 1: return self.secondLayoutSection()
+         default: return self.thirdLayoutSection()
+         }
+       }
+    }
+    
+    private func firstLayoutSection() -> NSCollectionLayoutSection {
+
+       let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
+    .fractionalHeight(1))
+
+       let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+
+       let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension:
+    .fractionalWidth(0.5))
+
+       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+    group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
+
+       let section = NSCollectionLayoutSection(group: group)
+
+       section.orthogonalScrollingBehavior = .groupPaging
+
+       return section
+    }
+    
+    private func secondLayoutSection() -> NSCollectionLayoutSection {
+
+       let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                             heightDimension: .fractionalHeight(0.3))//.absolute(100))
+
+       let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    item.contentInsets = .init(top: 0, leading: 0, bottom: 15, trailing: 15)
+
+       let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalWidth(0.5))//.estimated(500))
+
+       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+       let section = NSCollectionLayoutSection(group: group)
+     section.contentInsets.leading = 15
+
+       section.boundarySupplementaryItems = [
+    NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension:
+    .fractionalWidth(1), heightDimension: .estimated(44)), elementKind: "Популярное", alignment:
+    .topLeading)
+    ]
+
+     return section
+    }
+    
+    private func thirdLayoutSection() -> NSCollectionLayoutSection {
+
+       let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
+    .fractionalHeight(1))
+
+       let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    item.contentInsets.bottom = 15
+
+       let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
+    heightDimension: .fractionalWidth(0.35))
+
+       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+    group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
+
+       let section = NSCollectionLayoutSection(group: group)
+
+       section.orthogonalScrollingBehavior = .continuous
+
+       return section
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        switch section {
+              
+                  case 0:
+                      return 10
+                  case 1:
+                      return 9
+                  default:
+                      return 6
+              }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,18 +155,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.backgroundColor = .clear
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: 100, height: 100)
-       }
+
 }
 
 extension MainViewController {
     private func setupUI() {
-        collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collection = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
         view.addSubview(collection)
-        collection.backgroundColor = .lightGray
-        collection.isScrollEnabled = true
+        collection?.backgroundColor = .lightGray
         collection.frame = view.bounds
     }
 }

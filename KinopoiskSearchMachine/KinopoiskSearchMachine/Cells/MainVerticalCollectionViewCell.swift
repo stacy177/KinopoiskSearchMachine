@@ -38,7 +38,7 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.width.equalTo(contentView)
-            make.height.equalTo(200)
+            make.height.equalTo(100)
             make.top.equalTo(contentView)
             make.left.right.equalTo(contentView)
         }
