@@ -37,15 +37,14 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         genre.textColor = .gray
         
         imageView.snp.makeConstraints { make in
-            make.width.equalTo(contentView)
-            make.height.equalTo(100)
-            make.top.equalTo(contentView)
-            make.left.right.equalTo(contentView)
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(title.snp.top).inset(5)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.9)
         }
         
         title.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
-            make.top.equalTo(imageView.snp.bottom).inset(-5)
+            make.top.equalTo(imageView.snp.bottom)
             make.width.equalTo(100)
         }
         
