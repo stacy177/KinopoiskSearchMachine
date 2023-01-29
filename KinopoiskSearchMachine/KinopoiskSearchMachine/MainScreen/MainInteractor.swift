@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import Moya
 
 protocol MainBusinessLogic {
     func requestInitForm(_ request: Main.InitForm.Request)

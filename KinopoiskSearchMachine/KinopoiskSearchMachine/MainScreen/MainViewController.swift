@@ -11,7 +11,7 @@ protocol MainDisplayLogic: AnyObject {
 
 final class MainViewController: UIViewController, MainDisplayLogic {
 
-    private var collection: UICollectionView!
+    private var collectionView: UICollectionView!
     
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
@@ -45,10 +45,10 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     }
     
     private func setupCollection() {
-        collection?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
-        collection?.dataSource = self
-        collection?.delegate = self
-        collection?.reloadData()
+        collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.reloadData()
     }
 }
 
@@ -80,10 +80,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController {
     private func setupUI() {
-        collection = UICollectionView(frame: .zero, collectionViewLayout: CollectionLayoutFabric.createCompositionalLayout())
-        view.addSubview(collection)
-        collection?.backgroundColor = .lightGray
-        collection.snp.makeConstraints { make in
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: CollectionLayoutFabric.createCompositionalLayout())
+        view.addSubview(collectionView)
+        collectionView?.backgroundColor = .lightGray
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.left.right.equalToSuperview()

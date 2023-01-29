@@ -1,6 +1,6 @@
 //
 //  CollectionLayoutFabric.swift
-//  KinopoiskSearchMachine
+//
 
 import UIKit
 
