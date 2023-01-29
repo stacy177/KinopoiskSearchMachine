@@ -38,20 +38,20 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.bottom.equalTo(title.snp.top).inset(5)
+            make.bottom.equalTo(title.snp.top).inset(-5)
             make.height.equalTo(contentView.snp.height).multipliedBy(0.9)
         }
         
         title.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
             make.top.equalTo(imageView.snp.bottom)
-            make.width.equalTo(100)
+            make.width.equalTo(contentView.snp.width).multipliedBy(0.9)
         }
         
         genre.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
             make.top.equalTo(title.snp.bottom).inset(-5)
-            make.width.equalTo(100)
+            make.width.equalTo(contentView.snp.width).multipliedBy(0.9)
         }
     }
 }
