@@ -13,8 +13,7 @@ struct CollectionLayoutFabric {
             switch sectionNumber {
 
             case 0: return self.firstLayoutSection()
-            case 1: return self.secondLayoutSection()
-            default: return self.thirdLayoutSection()
+            default: return self.secondLayoutSection()
             }
         }
     }
@@ -34,6 +33,7 @@ struct CollectionLayoutFabric {
         group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
 
         let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
 
         section.orthogonalScrollingBehavior = .groupPaging
 
@@ -55,33 +55,13 @@ struct CollectionLayoutFabric {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets.leading = 15
+        section.interGroupSpacing = 15
 
         section.boundarySupplementaryItems = [
             NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension:
                     .fractionalWidth(1), heightDimension: .estimated(44)), elementKind: "Популярное", alignment:
                     .topLeading)
         ]
-
-        return section
-    }
-
-    static func thirdLayoutSection() -> NSCollectionLayoutSection {
-
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
-                .fractionalHeight(1))
-
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets.bottom = 15
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
-                                               heightDimension: .fractionalWidth(0.35))
-
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        section.orthogonalScrollingBehavior = .continuous
 
         return section
     }
