@@ -41,6 +41,7 @@
 		729737942980668200A93960 /* GenreSearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297378C2980668200A93960 /* GenreSearchProtocols.swift */; };
 		729737952980668200A93960 /* GenreSearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297378D2980668200A93960 /* GenreSearchAssembly.swift */; };
 		729737962980668200A93960 /* GenreSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297378E2980668200A93960 /* GenreSearchInteractor.swift */; };
+		7297379929869EE300A93960 /* CollectionLayoutFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297379829869EE300A93960 /* CollectionLayoutFabric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		7297378C2980668200A93960 /* GenreSearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchProtocols.swift; sourceTree = "<group>"; };
 		7297378D2980668200A93960 /* GenreSearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchAssembly.swift; sourceTree = "<group>"; };
 		7297378E2980668200A93960 /* GenreSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchInteractor.swift; sourceTree = "<group>"; };
+		7297379829869EE300A93960 /* CollectionLayoutFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionLayoutFabric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,13 +161,13 @@
 		5DC8F33329805AE400F8750D /* KinopoiskSearchMachine */ = {
 			isa = PBXGroup;
 			children = (
+				7297379729869E3300A93960 /* External */,
 				5DC8F33629805AE400F8750D /* SceneDelegate.swift */,
 				5DC8F33429805AE400F8750D /* AppDelegate.swift */,
 				729737862980662D00A93960 /* GenreSearchScreen */,
 				72973775298065EF00A93960 /* ActorSearchScreen */,
 				729737642980644C00A93960 /* MainScreen */,
 				7297375E298061DC00A93960 /* TabBar.swift */,
-				5D62EE842982B1F300C146BB /* Cells */,
 				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
 				5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */,
 				5DC8F34229805AE500F8750D /* Info.plist */,
@@ -231,6 +233,15 @@
 				7297378E2980668200A93960 /* GenreSearchInteractor.swift */,
 			);
 			path = GenreSearchScreen;
+			sourceTree = "<group>";
+		};
+		7297379729869E3300A93960 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5D62EE842982B1F300C146BB /* Cells */,
+				7297379829869EE300A93960 /* CollectionLayoutFabric.swift */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */,
 				729737942980668200A93960 /* GenreSearchProtocols.swift in Sources */,
 				72973770298065E500A93960 /* MainModels.swift in Sources */,
+				7297379929869EE300A93960 /* CollectionLayoutFabric.swift in Sources */,
 				729737832980662700A93960 /* ActorSearchProtocols.swift in Sources */,
 				7297376D298065E500A93960 /* MainPresenter.swift in Sources */,
 				729737912980668200A93960 /* GenreSearchRouter.swift in Sources */,
