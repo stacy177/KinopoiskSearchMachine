@@ -7,15 +7,14 @@ import UIKit
 enum Main {
     enum InitForm {
         struct Request {
-            let title: String?
-            let year: Int?
-            let genre: String?
+            let data: [MovieData]?
         }
         struct Response {
             let imageUrl: String?
             let title: String?
             let year: Int?
             let genre: String?
+            let id: Int?
         }
         struct ViewModel {
             let movies: [MovieData]?
@@ -27,5 +26,6 @@ enum Main {
         let title: String?
         let year: Int?
         let genre: String?
+        let id: Int?
     }
 }

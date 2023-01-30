@@ -6,7 +6,7 @@ import Foundation
 import Moya
 
 protocol MainBusinessLogic {
-    func requestInitForm(_ request: Main.InitForm.Request)
+    func setup(_ request: Main.InitForm.Request)
 }
 
 final class MainInteractor: MainBusinessLogic, MainDataStore {
@@ -19,7 +19,7 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
         self.presenter = presenter
     }
 
-    func requestInitForm(_ request: Main.InitForm.Request) {
+    func setup(_ request: Main.InitForm.Request) {
         page += 1
         NetworkManager.getTopSeries(page: page) { result in
             switch result {

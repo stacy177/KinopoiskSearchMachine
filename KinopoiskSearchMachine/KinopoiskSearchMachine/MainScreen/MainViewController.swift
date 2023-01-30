@@ -40,7 +40,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     // MARK: - Private
 
     private func initialSetup() {
-        interactor.requestInitForm(Main.InitForm.Request(title: "", year: 0, genre: ""))
+        interactor.setup(Main.InitForm.Request(title: "", year: 0, genre: ""))
     }
     
     private func setupCollection() {
