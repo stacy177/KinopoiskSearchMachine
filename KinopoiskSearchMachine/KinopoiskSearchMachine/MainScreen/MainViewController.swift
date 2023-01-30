@@ -28,9 +28,8 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        initForm()
         setupCollection()
+        initialSetup()
         view.backgroundColor = .red
     }
 
@@ -40,14 +39,25 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     // MARK: - Private
 
-    private func initForm() {
-        interactor.requestInitForm(Main.InitForm.Request(image: "", title: "", year: 0, genre: ""))
+    private func initialSetup() {
+        interactor.requestInitForm(Main.InitForm.Request(title: "", year: 0, genre: ""))
     }
     
     private func setupCollection() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: CollectionLayoutFabric.createCompositionalLayout())
+        view.addSubview(collectionView)
+        collectionView?.backgroundColor = .lightGray
+
         collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
         collectionView?.dataSource = self
         collectionView?.delegate = self
+
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.left.right.equalToSuperview()
+        }
+
         collectionView?.reloadData()
     }
 }
@@ -79,13 +89,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController {
     private func setupUI() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: CollectionLayoutFabric.createCompositionalLayout())
-        view.addSubview(collectionView)
-        collectionView?.backgroundColor = .lightGray
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.left.right.equalToSuperview()
-        }
+
+
     }
 }
