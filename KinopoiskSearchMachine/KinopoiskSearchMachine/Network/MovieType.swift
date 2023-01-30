@@ -38,34 +38,41 @@ extension MovieType: TargetType {
     var task: Moya.Task {
         switch self {
         case .searchMovies(name: let name):
-            return .requestParameters(parameters: ["token" : token], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["token": token, "search": name], encoding: URLEncoding.queryString)
         case .bestMovies(page: let page):
-            return .requestParameters(parameters: ["token" : token], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["token": token, "page": "\(page)"], encoding: URLEncoding.queryString)
         case .newMovies(page: let page):
-            return .requestPlain
+            return .requestParameters(parameters: ["token": token, "page": "\(page)"], encoding: URLEncoding.queryString)
         case .detailMovie(id: let id):
-            return .requestPlain
+            return .requestParameters(parameters: ["token": token, "search": "\(id)"], encoding: URLEncoding.queryString)
         }
     }
 
     var headers: [String : String]? {
         switch self {
-        case .bestMovies(let page):
-            return [:]
-        case .detailMovie(let id):
-            return [:]
-        case .newMovies(let page):
-            return ["field": "typeNumber",
-             "search": "1",
-             "sortField": "votes.kp",
-             "sortType": "-1",
-             "limit": "20",
-             "page": "\(page)"
-            ]
-        case .searchMovies(let name):
+        case .bestMovies(_):
             return [
+                "field": "typeNumber",
+                "search": "1",
+                "sortField": "votes.kp",
+                "sortType": "-1",
+                "limit": "20",
+            ]
+        case .detailMovie(_):
+            return ["field": "id"]
+        case .newMovies(_):
+            return [
+                "token" : token,
+                "field": "typeNumber",
+                "search": "1",
+                "sortField": "votes.kp",
+                "sortType": "-1",
+                "limit": "20"
+            ]
+        case .searchMovies(_):
+            return [
+                "token" : token,
                 "field": "name",
-                "search": name,
                 "isStrict": "false"
             ]
         }

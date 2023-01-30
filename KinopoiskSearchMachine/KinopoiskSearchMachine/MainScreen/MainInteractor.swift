@@ -10,6 +10,7 @@ protocol MainBusinessLogic {
 }
 
 final class MainInteractor: MainBusinessLogic, MainDataStore {
+    var page: Int = 1
     private let presenter: MainPresentationLogic
 
     init(presenter: MainPresentationLogic) {
@@ -17,7 +18,7 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
     }
 
     func requestInitForm(_ request: Main.InitForm.Request) {
-        NetworkManager.getTopSeries(page: 1) { result in
+        NetworkManager.getTopSeries(page: page) { result in
             switch result {
             case .success(let movies):
                 print(movies)
