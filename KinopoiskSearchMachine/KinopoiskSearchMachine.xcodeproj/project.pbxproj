@@ -177,9 +177,9 @@
 				72973775298065EF00A93960 /* ActorSearchScreen */,
 				729737642980644C00A93960 /* MainScreen */,
 				7297375E298061DC00A93960 /* TabBar.swift */,
-				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
 				5DC8F33F29805AE500F8750D /* LaunchScreen.storyboard */,
 				5DC8F34229805AE500F8750D /* Info.plist */,
+				5DC8F33D29805AE500F8750D /* Assets.xcassets */,
 			);
 			path = KinopoiskSearchMachine;
 			sourceTree = "<group>";

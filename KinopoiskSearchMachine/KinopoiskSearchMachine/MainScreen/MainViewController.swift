@@ -28,6 +28,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        register()
         setupCollection()
         initialSetup()
         view.backgroundColor = .red
@@ -40,7 +41,15 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     // MARK: - Private
 
     private func initialSetup() {
-        interactor.setup(Main.InitForm.Request(title: "", year: 0, genre: ""))
+        interactor.setup(Main.InitForm.Request(type: Main.SortType.new))
+    }
+    
+    private func register() {
+        collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+        collectionView?.reloadData()
+
     }
     
     private func setupCollection() {
@@ -48,24 +57,18 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         view.addSubview(collectionView)
         collectionView?.backgroundColor = .lightGray
 
-        collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
-        collectionView?.dataSource = self
-        collectionView?.delegate = self
-
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.left.right.equalToSuperview()
         }
-
-        collectionView?.reloadData()
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,14 +85,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
         cell.backgroundColor = .clear
+        switch indexPath.section {
+        case 0: interactor.setup(.init(type: .new))
+        case 1: interactor.setup(.init(type: .top))
+        default: break
+        }
         return cell
     }
 
-}
-
-extension MainViewController {
-    private func setupUI() {
-
-
-    }
 }

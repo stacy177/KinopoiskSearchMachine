@@ -10,6 +10,6 @@ final class MainPresenter: MainPresentationLogic {
     weak var view: MainDisplayLogic?
 
     func presentInitForm(_ response: [Main.InitForm.Response]) {
-        view?.displayInitForm(Main.InitForm.ViewModel(movies: ))
+        view?.displayInitForm(Main.InitForm.ViewModel(movies: [.init(header: "", data: [])]))
     }
 }
