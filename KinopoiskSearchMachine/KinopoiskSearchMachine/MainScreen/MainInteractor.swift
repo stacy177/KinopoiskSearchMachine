@@ -25,14 +25,14 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
             NetworkManager.getNewMovies(page: 1) { result in
                 switch result {
                 case .success(let movies):
-                    _ = movies.docs?.map {
-                        self.movieResponseArray?.append(.init(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id))
+                    let movieResponseArray = movies.docs?.map {
+                        Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.names?[0].name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
                     }
-                    guard let array = self.movieResponseArray else {
+                    guard let movieResponseArray = movieResponseArray else {
                         return
                     }
                     DispatchQueue.main.async {
-                        self.presenter.presentInitForm(array)
+                        self.presenter.presentInitForm(movieResponseArray)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -42,14 +42,14 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
             NetworkManager.getTopSeries(page: 1) { result in
                 switch result {
                 case .success(let movies):
-                    _ = movies.docs?.map {
-                        self.movieResponseArray?.append(.init(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id))
+                    let movieResponseArray = movies.docs?.map {
+                        Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.names?[0].name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
                     }
-                    guard let array = self.movieResponseArray else {
+                    guard let movieResponseArray = movieResponseArray else {
                         return
                     }
                     DispatchQueue.main.async {
-                        self.presenter.presentInitForm(array)
+                        self.presenter.presentInitForm(movieResponseArray)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)

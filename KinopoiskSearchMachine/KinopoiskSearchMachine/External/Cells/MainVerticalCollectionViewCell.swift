@@ -10,8 +10,8 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         String(describing: self)
     }
     private let imageView = UIImageView()
-    private let title = UILabel()
-    private let genre = UILabel()
+    private let titleLabel = UILabel()
+    private let genreLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,36 +21,42 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    func setup(name: String?, image: UIImage?, genre: String?) {
+        titleLabel.text = name
+        genreLabel.text = genre
+        imageView.image = image
+    }
+
     private func setupUI() {
         contentView.addSubview(imageView)
-        contentView.addSubview(title)
-        contentView.addSubview(genre)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(genreLabel)
         
         imageView.backgroundColor = .yellow
-        title.numberOfLines = 2
-        title.text = "Хроники нарнии: Лев, колдунья и волшебный шкаф"
-        title.font = UIFont.systemFont(ofSize: 10)
-        title.textColor = .black
-        genre.text = "фэнтези"
-        genre.font = UIFont.systemFont(ofSize: 10)
-        genre.textColor = .gray
+        titleLabel.numberOfLines = 2
+//        titleLabel.text = "Хроники нарнии: Лев, колдунья и волшебный шкаф"
+        titleLabel.font = UIFont.systemFont(ofSize: 10)
+        titleLabel.textColor = .black
+//        genreLabel.text = "фэнтези"
+        genreLabel.font = UIFont.systemFont(ofSize: 10)
+        genreLabel.textColor = .gray
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.bottom.equalTo(title.snp.top).inset(-5)
+            make.bottom.equalTo(titleLabel.snp.top).inset(-5)
             make.height.equalTo(contentView.snp.height).multipliedBy(0.9)
         }
         
-        title.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
             make.top.equalTo(imageView.snp.bottom)
             make.width.equalTo(contentView.snp.width).multipliedBy(0.9)
         }
         
-        genre.snp.makeConstraints { make in
+        genreLabel.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
-            make.top.equalTo(title.snp.bottom).inset(-5)
+            make.top.equalTo(titleLabel.snp.bottom).inset(-5)
             make.width.equalTo(contentView.snp.width).multipliedBy(0.9)
         }
     }

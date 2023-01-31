@@ -16,6 +16,8 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
 
+    private var moviesDataSource: [Main.InitForm.SectionModel] = []
+
     init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
         self.interactor = interactor
         self.router = router
@@ -28,15 +30,19 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        register()
         setupCollection()
-        initialSetup()
+        register()
+        interactor.setup(.init(type: .new))
+        interactor.setup(.init(type: .top))
         view.backgroundColor = .red
     }
 
     // MARK: - MainDisplayLogic
 
-    func displayInitForm(_ viewModel: Main.InitForm.ViewModel) {}
+    func displayInitForm(_ viewModel: Main.InitForm.ViewModel) {
+        moviesDataSource += viewModel.movies ?? []
+        collectionView.reloadData()
+    }
 
     // MARK: - Private
 
@@ -48,7 +54,6 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        collectionView?.reloadData()
 
     }
     
@@ -68,28 +73,18 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return moviesDataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-                  case 0:
-                      return 10
-                  case 1:
-                      return 9
-                  default:
-                      return 6
-              }
+            return moviesDataSource[section].data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
-        cell.backgroundColor = .clear
-        switch indexPath.section {
-        case 0: interactor.setup(.init(type: .new))
-        case 1: interactor.setup(.init(type: .top))
-        default: break
-        }
+//        cell.backgroundColor = .blue
+        let data = moviesDataSource[indexPath.section].data[indexPath.row]
+        cell.setup(name: data.title, image: data.poster, genre: data.genre)
         return cell
     }
 
