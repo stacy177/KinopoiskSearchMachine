@@ -7,7 +7,7 @@ import UIKit
 enum Main {
     enum InitForm {
         struct Request {
-            let type: SortType
+            let type: RequestType
         }
         struct Response {
             let imageUrl: String?
@@ -17,12 +17,12 @@ enum Main {
             let id: Int?
         }
         struct ViewModel {
-            let movies: [SectionModel]?
+            var sections: [SectionModel]
         }
         
         struct SectionModel {
-            let header: String?
-            let data: [MovieData]
+            let header: SortType?
+            var data: [MovieData]
         }
     }
     
@@ -31,8 +31,11 @@ enum Main {
         case top = "Популярные"
     }
 
+    enum RequestType {
+        case initial, update
+    }
+
     struct MovieData {
-        let sortType: SortType
         let poster: UIImage?
         let title: String?
         let year: Int?

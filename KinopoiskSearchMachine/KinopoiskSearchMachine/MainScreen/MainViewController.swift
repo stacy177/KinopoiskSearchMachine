@@ -6,7 +6,7 @@ import UIKit
 import SnapKit
 
 protocol MainDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Main.InitForm.ViewModel)
+    func displayUpdate(_ viewModel: Main.InitForm.ViewModel)
 }
 
 final class MainViewController: UIViewController, MainDisplayLogic {
@@ -16,7 +16,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
 
-    private var moviesDataSource: [Main.InitForm.SectionModel] = []
+    private var dataSource: Main.InitForm.ViewModel = .init(sections: [])
 
     init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
         self.interactor = interactor
@@ -32,23 +32,16 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         super.viewDidLoad()
         setupCollection()
         register()
-        interactor.setup(.init(type: .new))
-        interactor.setup(.init(type: .top))
+        interactor.setup(.init(type: .initial))
         view.backgroundColor = .red
     }
 
-    // MARK: - MainDisplayLogic
-
-    func displayInitForm(_ viewModel: Main.InitForm.ViewModel) {
-        moviesDataSource += viewModel.movies ?? []
+    func displayUpdate(_ viewModel: Main.InitForm.ViewModel) {
+        dataSource = viewModel
         collectionView.reloadData()
     }
 
     // MARK: - Private
-
-    private func initialSetup() {
-        interactor.setup(Main.InitForm.Request(type: Main.SortType.new))
-    }
     
     private func register() {
         collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
@@ -73,17 +66,17 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return moviesDataSource.count
+        return dataSource.sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return moviesDataSource[section].data.count
+        return dataSource.sections[section].data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
 //        cell.backgroundColor = .blue
-        let data = moviesDataSource[indexPath.section].data[indexPath.row]
+        let data = dataSource.sections[indexPath.section].data[indexPath.row]
         cell.setup(name: data.title, image: data.poster, genre: data.genre)
         return cell
     }
