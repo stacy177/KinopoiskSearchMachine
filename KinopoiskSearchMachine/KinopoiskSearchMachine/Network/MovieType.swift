@@ -47,8 +47,8 @@ extension MovieType: TargetType {
                                                    "token": token],
                                       encoding: URLEncoding.queryString) // correction is needed
         case .newMovies(page: let page):
-            return .requestParameters(parameters: ["field": ["year", "typeNumber"],
-                                                   "search": ["2022", "2"],
+            return .requestParameters(parameters: ["field": ["rating.kp", "year", "typeNumber"],
+                                                   "search": ["7-10", "2020-2022", "2"],
                                                    "sortField": ["year", "votes.imdb"],
                                                    "sortType": ["1", "1"],
                                                    "page": "\(page)",
