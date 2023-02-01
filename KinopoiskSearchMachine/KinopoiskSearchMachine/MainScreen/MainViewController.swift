@@ -16,7 +16,13 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
 
-    private var dataSource: Main.InitForm.ViewModel = .init(sections: [])
+    private var dataSource: Main.InitForm.ViewModel = .init(sections: []) {
+        didSet {
+            if dataSource.sections.count == 2 {
+                collectionView.reloadData()
+            }
+        }
+    }
 
     init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
         self.interactor = interactor
@@ -38,7 +44,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     func displayUpdate(_ viewModel: Main.InitForm.ViewModel) {
         dataSource = viewModel
-        collectionView.reloadData()
+//        collectionView.reloadData()
     }
 
     // MARK: - Private

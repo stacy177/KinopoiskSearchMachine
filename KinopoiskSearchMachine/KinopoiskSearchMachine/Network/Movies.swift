@@ -6,6 +6,12 @@
 import Foundation
 
 // MARK: - Movies
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let movies = try? JSONDecoder().decode(Movies.self, from: jsonData)
+
+// MARK: - Movies
 struct Movies: Codable {
     let docs: [Doc]?
     let total, limit, page, pages: Int?
@@ -13,107 +19,42 @@ struct Movies: Codable {
 
 // MARK: - Doc
 struct Doc: Codable {
-    let externalId: ExternalID?
-    let logo: Logo?
+    let externalID: ExternalID?
     let poster: Poster?
     let rating, votes: Rating?
-    let watchability: Watchability?
     let id: Int?
     let type: TypeEnum?
     let name, description: String?
     let year: Int?
     let alternativeName: String?
-    let movieLength: Int?
-    let names: [Name]?
-    let shortDescription: String?
+
+    enum CodingKeys: String, CodingKey {
+        case externalID
+        case poster, rating, votes, id, type, name, description, year, alternativeName
+    }
 }
 
 // MARK: - ExternalID
 struct ExternalID: Codable {
-    let kpHD: String?
-    let imdb, id: String?
     let tmdb: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case kpHD, imdb
-        case id = "_id"
-        case tmdb
-    }
-}
-
-// MARK: - Logo
-struct Logo: Codable {
-    let id: String?
-    let url: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case url
-    }
-}
-
-// MARK: - Name
-struct Name: Codable {
-    let id, name: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case name
-    }
+    let imdb: String?
 }
 
 // MARK: - Poster
 struct Poster: Codable {
-    let id: String?
     let url, previewURL: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
         case url
-        case previewURL = "previewUrl"
+        case previewURL
     }
 }
 
 // MARK: - Rating
 struct Rating: Codable {
-    let id: String?
-    let kp: Double?
-    let imdb, filmCritics, russianFilmCritics: Int?
-    let ratingAwait: Double?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case kp, imdb, filmCritics, russianFilmCritics
-        case ratingAwait = "await"
-    }
+    let kp, imdb, tmdb: Double?
 }
 
 enum TypeEnum: String, Codable {
-    case cartoon = "cartoon"
-    case movie = "movie"
+    case tvSeries = "tv-series"
 }
-
-// MARK: - Watchability
-struct Watchability: Codable {
-    let id: String?
-    let items: [Item]?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case items
-    }
-}
-
-// MARK: - Item
-struct Item: Codable {
-    let logo: Logo?
-    let name: String?
-    let url: String?
-    let id: String?
-
-    enum CodingKeys: String, CodingKey {
-        case logo, name, url
-        case id = "_id"
-    }
-}
-

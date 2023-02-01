@@ -35,43 +35,33 @@ extension MovieType: TargetType {
     var task: Moya.Task {
         switch self {
         case .searchMovies(name: let name):
-            return .requestParameters(parameters: ["token": token, "search": name], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["token": token,
+                                                   "search": name],
+                                      encoding: URLEncoding.queryString)
         case .bestMovies(page: let page):
-            return .requestParameters(parameters: [ "field": ["rating.kp", "year", "typeNumber"], "search": ["7-10", "2020-2022", "2"], "sortField": "year", "sortType": "1",  "page": "\(page)", "token": token], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["field": ["year", "typeNumber"],
+                                                   "search": ["2022", "2"],
+                                                   "sortField": "year",
+                                                   "sortType": "1",
+                                                   "page": "\(page)",
+                                                   "token": token],
+                                      encoding: URLEncoding.queryString) // correction is needed
         case .newMovies(page: let page):
-            return .requestParameters(parameters: ["token": token, "page": "\(page)"], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["field": ["year", "typeNumber"],
+                                                   "search": ["2022", "2"],
+                                                   "sortField": "year",
+                                                   "sortType": "1",
+                                                   "page": "\(page)",
+                                                   "token": token],
+                                      encoding: URLEncoding.queryString)
         case .detailMovie(id: let id):
-            return .requestParameters(parameters: ["token": token, "search": "\(id)"], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["token": token,
+                                                   "search": "\(id)"],
+                                      encoding: URLEncoding.queryString)
         }
     }
 
     var headers: [String : String]? {
-        switch self {
-        case .bestMovies(_):
-            return [
-                "field": "rating.kp",
-                "search": "1",
-                "sortField": "votes.imdb",
-                "sortType": "-1",
-                "limit": "20"
-            ]
-        case .detailMovie(_):
-            return ["field": "id"]
-        case .newMovies(_):
-            return [
-                "token" : token,
-                "field": "typeNumber",
-                "search": "1",
-                "sortField": "votes.kp",
-                "sortType": "-1",
-                "limit": "20"
-            ]
-        case .searchMovies(_):
-            return [
-                "token" : token,
-                "field": "name",
-                "isStrict": "false"
-            ]
-        }
+        return nil
     }
 }
