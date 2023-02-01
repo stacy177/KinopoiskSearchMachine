@@ -36,7 +36,7 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
             switch result {
             case .success(let movies):
                 let newMovies = movies.docs?.map {
-                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.alternativeName, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
+                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
                 }
                 self.presenter.appendMovies(newMovies ?? [], type: .new)
             case .failure(let error):
@@ -50,7 +50,7 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
             switch result {
             case .success(let movies):
                 let topMovies = movies.docs?.map {
-                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.alternativeName, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
+                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
                 }
                 self.presenter.appendMovies(topMovies ?? [], type: .top)
             case .failure(let error):

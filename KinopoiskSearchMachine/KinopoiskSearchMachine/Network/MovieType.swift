@@ -39,18 +39,18 @@ extension MovieType: TargetType {
                                                    "search": name],
                                       encoding: URLEncoding.queryString)
         case .bestMovies(page: let page):
-            return .requestParameters(parameters: ["field": ["year", "typeNumber"],
-                                                   "search": ["2022", "2"],
-                                                   "sortField": "year",
-                                                   "sortType": "1",
+            return .requestParameters(parameters: ["field": ["rating.kp", "year", "typeNumber"],
+                                                   "search": ["7-10", "2017-2022", "2"],
+                                                   "sortField": ["year", "votes.imdb"],
+                                                   "sortType": ["1", "-1"],
                                                    "page": "\(page)",
                                                    "token": token],
                                       encoding: URLEncoding.queryString) // correction is needed
         case .newMovies(page: let page):
             return .requestParameters(parameters: ["field": ["year", "typeNumber"],
                                                    "search": ["2022", "2"],
-                                                   "sortField": "year",
-                                                   "sortType": "1",
+                                                   "sortField": ["year", "votes.imdb"],
+                                                   "sortType": ["1", "1"],
                                                    "page": "\(page)",
                                                    "token": token],
                                       encoding: URLEncoding.queryString)
