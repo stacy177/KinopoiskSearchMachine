@@ -10,7 +10,7 @@ protocol MainBusinessLogic {
 }
 
 final class MainInteractor: MainBusinessLogic, MainDataStore {
-    var page: Int = 0
+    var page: Int = 1
     private let presenter: MainPresentationLogic
 
     private var movieResponseArray: [Main.InitForm.Response]?
@@ -22,7 +22,6 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
     func setup(_ request: Main.InitForm.Request) {
         switch request.type {
         case .initial:
-            page += 1
             newMoviesRequest(page: page)
             topMoviesRequest(page: page)
         case .update:

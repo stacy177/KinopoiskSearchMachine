@@ -86,4 +86,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == dataSource.sections[1].data.count - 2 {
+            interactor.setup(.init(type: .update))
+        }
+    }
+
 }
