@@ -6,6 +6,7 @@ import UIKit
 import SnapKit
 
 final class MainVerticalCollectionViewCell: UICollectionViewCell {
+
     static var identifier: String {
         String(describing: self)
     }
@@ -22,10 +23,23 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(name: String?, image: UIImage?, genre: String?) {
+    func load(url: URL) {
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imageView.image = image
+                        }
+                    }
+                }
+            }
+        }
+    
+    func setup(name: String?, imageUrl: String?, genre: String?) {
         titleLabel.text = name
         genreLabel.text = genre
-        imageView.image = image
+        guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else { return }
+        load(url: url)
     }
 
     private func setupUI() {
@@ -35,10 +49,8 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         
         imageView.backgroundColor = .yellow
         titleLabel.numberOfLines = 2
-//        titleLabel.text = "Хроники нарнии: Лев, колдунья и волшебный шкаф"
         titleLabel.font = UIFont.systemFont(ofSize: 10)
         titleLabel.textColor = .black
-//        genreLabel.text = "фэнтези"
         genreLabel.font = UIFont.systemFont(ofSize: 10)
         genreLabel.textColor = .gray
         

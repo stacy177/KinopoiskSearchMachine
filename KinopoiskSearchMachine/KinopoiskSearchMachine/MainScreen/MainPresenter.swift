@@ -13,7 +13,7 @@ final class MainPresenter: MainPresentationLogic {
     var viewModel: Main.InitForm.ViewModel = .init(sections: [])
     func appendMovies(_ response: [Main.InitForm.Response], type: Main.SortType) {
         let sectionMovies = response.map {
-            Main.MovieData(poster: nil, title: $0.title, year: $0.year, genre: $0.genre, id: $0.id)
+            Main.MovieData(poster: $0.imageUrl, title: $0.title, year: $0.year, genre: $0.genre, id: $0.id)
         }
 
         if viewModel.sections.count < 2 {

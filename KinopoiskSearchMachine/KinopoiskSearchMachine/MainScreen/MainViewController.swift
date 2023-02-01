@@ -75,9 +75,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
-//        cell.backgroundColor = .blue
         let data = dataSource.sections[indexPath.section].data[indexPath.row]
-        cell.setup(name: data.title, image: data.poster, genre: data.genre)
+        cell.setup(name: data.title, imageUrl: data.poster, genre: data.genre)
         return cell
     }
 

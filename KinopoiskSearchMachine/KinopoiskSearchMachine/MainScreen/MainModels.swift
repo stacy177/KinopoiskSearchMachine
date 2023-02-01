@@ -36,7 +36,7 @@ enum Main {
     }
 
     struct MovieData {
-        let poster: UIImage?
+        let poster: String?
         let title: String?
         let year: Int?
         let genre: String?
