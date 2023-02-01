@@ -26,7 +26,7 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
             topMoviesRequest(page: page)
         case .update:
             page += 1
-            newMoviesRequest(page: page)
+            topMoviesRequest(page: page)
         }
     }
 
