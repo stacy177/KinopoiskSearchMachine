@@ -17,7 +17,7 @@ enum Main {
             let id: Int?
         }
         struct ViewModel {
-            var sections: [SectionModel]
+            var sections: [SortType: [MovieData]]
         }
         
         struct SectionModel {
@@ -26,9 +26,18 @@ enum Main {
         }
     }
     
-    enum SortType: String {
+    enum SortType: String, Hashable {
         case new = "Новые фильмы"
         case top = "Популярные"
+        
+        func hash(into hasher: inout Hasher) {
+            switch self {
+            case .new:
+                hasher.combine(self.rawValue)
+            case .top:
+                hasher.combine(self.rawValue)
+            }
+        }
     }
 
     enum RequestType {

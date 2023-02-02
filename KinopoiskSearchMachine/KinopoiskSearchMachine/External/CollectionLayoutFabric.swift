@@ -30,10 +30,9 @@ struct CollectionLayoutFabric {
                 .fractionalHeight(0.3))
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
+        group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 15
 
         section.orthogonalScrollingBehavior = .continuous
 

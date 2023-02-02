@@ -16,14 +16,8 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
 
-    private var dataSource: Main.InitForm.ViewModel = .init(sections: []) {
-        didSet {
-            if dataSource.sections.count == 2 {
-                collectionView.reloadData()
-            }
-        }
-    }
-
+    private var dataSource: Main.InitForm.ViewModel = .init(sections: [:])
+    
     init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
         self.interactor = interactor
         self.router = router
@@ -44,7 +38,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 
     func displayUpdate(_ viewModel: Main.InitForm.ViewModel) {
         dataSource = viewModel
-//        collectionView.reloadData()
+        collectionView.reloadData()
     }
 
     // MARK: - Private
@@ -76,18 +70,23 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.sections[section].data.count
+        switch section {
+        case 0: return dataSource.sections[.new]?.count ?? 0
+        case 1: return dataSource.sections[.top]?.count ?? 0
+        default: return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
-        let data = dataSource.sections[indexPath.section].data[indexPath.row]
+        let type: Main.SortType = indexPath.section == 0 ? .new : .top
+        guard let data = dataSource.sections[type]?[indexPath.row] else { return cell }
         cell.setup(name: data.title, imageUrl: data.poster, genre: data.genre)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == dataSource.sections[1].data.count - 2 && indexPath.section == 1 {
+        if indexPath.row == (dataSource.sections[.top]?.count ?? 0) - 2 && indexPath.section == 1 {
             interactor.setup(.init(type: .update))
         }
     }
