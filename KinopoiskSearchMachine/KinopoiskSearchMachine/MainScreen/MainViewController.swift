@@ -91,5 +91,4 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             interactor.setup(.init(type: .update))
         }
     }
-
 }

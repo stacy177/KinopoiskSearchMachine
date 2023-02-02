@@ -20,14 +20,14 @@ struct CollectionLayoutFabric {
 
     static func firstLayoutSection() -> NSCollectionLayoutSection {
 
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension:
                 .fractionalHeight(1))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension:
-                .fractionalHeight(0.5))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
+                .fractionalHeight(0.3))
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 2)
@@ -35,7 +35,7 @@ struct CollectionLayoutFabric {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 15
 
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .continuous
 
         return section
     }
