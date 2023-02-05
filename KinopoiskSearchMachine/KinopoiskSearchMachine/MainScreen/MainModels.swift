@@ -7,7 +7,6 @@ import UIKit
 enum Main {
     enum InitForm {
         struct Request {
-            let type: RequestType
         }
         struct Response {
             let imageUrl: String?

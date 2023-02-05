@@ -7,6 +7,7 @@ import SnapKit
 
 protocol MainDisplayLogic: AnyObject {
     func displayUpdate(_ viewModel: Main.InitForm.ViewModel)
+    func displayAppend(_ viewModel: Main.InitForm.ViewModel)
 }
 
 final class MainViewController: UIViewController, MainDisplayLogic {
@@ -32,13 +33,18 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         super.viewDidLoad()
         setupCollection()
         register()
-        interactor.setup(.init(type: .initial))
+        interactor.setup()
         view.backgroundColor = .red
+        collectionView.reloadData()
     }
 
     func displayUpdate(_ viewModel: Main.InitForm.ViewModel) {
         dataSource = viewModel
         collectionView.reloadData()
+    }
+
+    func displayAppend(_ viewModel: Main.InitForm.ViewModel) {
+        dataSource = viewModel
     }
 
     // MARK: - Private
@@ -47,7 +53,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         collectionView?.register(MainVerticalCollectionViewCell.self, forCellWithReuseIdentifier: MainVerticalCollectionViewCell.identifier)
         collectionView?.dataSource = self
         collectionView?.delegate = self
-
+        collectionView.prefetchDataSource = self
     }
     
     private func setupCollection() {
@@ -87,7 +93,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == (dataSource.sections[.top]?.count ?? 0) - 2 && indexPath.section == 1 {
-            interactor.setup(.init(type: .update))
+            interactor.update()
         }
     }
+}
+
+extension MainViewController: UICollectionViewDataSourcePrefetching {
+
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+
+        collectionView.reloadItems(at: indexPaths)
+    }
+
+
 }
