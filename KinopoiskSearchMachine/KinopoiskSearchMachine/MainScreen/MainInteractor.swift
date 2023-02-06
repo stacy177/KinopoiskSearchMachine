@@ -7,60 +7,70 @@ import Moya
 
 protocol MainBusinessLogic {
     func setup()
-    func update()
+    func update(indexPaths: [IndexPath])
 }
 
 final class MainInteractor: MainBusinessLogic, MainDataStore {
     var page: Int = 1
     private let presenter: MainPresentationLogic
 
-    private var movieResponseArray: [Main.InitForm.Response]?
+    private var movieResponseDict: [Main.SortType: [Main.InitForm.Response]] = [:]
 
     init(presenter: MainPresentationLogic) {
         self.presenter = presenter
     }
 
     func setup() {
-        newMoviesRequest(page: page)
-        topMoviesRequest(page: page, type: .initial)
-    }
 
-    func update() {
-        page += 1
-        topMoviesRequest(page: page, type: .update)
-    }
-
-    private func newMoviesRequest(page: Int) {
+        let group = DispatchGroup()
+        group.enter()
         NetworkManager.getNewMovies(page: page) { result in
             switch result {
             case .success(let movies):
-                let newMovies = movies.docs?.map {
-                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
+                let response = self.convertToResponse(movies: movies)
+                self.movieResponseDict[.new] = response
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            group.leave()
+        }
+        group.enter()
+        NetworkManager.getTopSeries(page: page) {
+            result in
+            switch result {
+            case .success(let movies):
+                let response = self.convertToResponse(movies: movies)
+                self.movieResponseDict[.top] = response
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            self.presenter.presentInitMovies(self.movieResponseDict)
+        }
+    }
+
+    func update(indexPaths: [IndexPath]) {
+        page += 1
+        NetworkManager.getTopSeries(page: page) { result in
+            switch result {
+            case .success(let movies):
+                let response = self.convertToResponse(movies: movies)
+                DispatchQueue.main.async {
+                    self.presenter.appendMovies(response, indexPaths: indexPaths)
                 }
-                self.presenter.appendMovies(newMovies ?? [], type: .new)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
 
-    private func topMoviesRequest(page: Int, type: Main.RequestType) {
-        NetworkManager.getTopSeries(page: page) { result in
-            switch result {
-            case .success(let movies):
-                let topMovies = movies.docs?.map {
-                    Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
-                }
-                switch type {
-                case .initial:
-                    self.presenter.appendMovies(topMovies ?? [], type: .top)
-                case .update:
-                    self.presenter.appendTopMovies(topMovies ?? [])
-                }
-                self.presenter.appendMovies(topMovies ?? [], type: .top)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+    private func convertToResponse(movies: Movies) -> [Main.InitForm.Response] {
+        let response = movies.docs?.map {
+            Main.InitForm.Response(imageUrl: $0.poster?.url, title: $0.name, year: $0.year, genre: $0.type?.rawValue, id: $0.id)
         }
+        guard let response = response else { return [] }
+        return response
     }
 }

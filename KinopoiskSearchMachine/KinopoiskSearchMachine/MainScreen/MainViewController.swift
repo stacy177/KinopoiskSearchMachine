@@ -6,8 +6,8 @@ import UIKit
 import SnapKit
 
 protocol MainDisplayLogic: AnyObject {
-    func displayUpdate(_ viewModel: Main.InitForm.ViewModel)
-    func displayAppend(_ viewModel: Main.InitForm.ViewModel)
+    func displayInit(_ viewModelDict: [Main.SortType: [Main.InitForm.ViewModel]])
+    func displayAppend(_ viewModel: [Main.InitForm.ViewModel], indexPaths: [IndexPath])
 }
 
 final class MainViewController: UIViewController, MainDisplayLogic {
@@ -17,7 +17,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
 
-    private var dataSource: Main.InitForm.ViewModel = .init(sections: [:])
+    private var dataSource: [Main.SortType: [Main.InitForm.ViewModel]] = [:]
     
     init(interactor: MainBusinessLogic, router: MainRoutingLogic) {
         self.interactor = interactor
@@ -35,16 +35,16 @@ final class MainViewController: UIViewController, MainDisplayLogic {
         register()
         interactor.setup()
         view.backgroundColor = .red
+    }
+
+    func displayInit(_ viewModelDict: [Main.SortType: [Main.InitForm.ViewModel]]) {
+        dataSource = viewModelDict
         collectionView.reloadData()
     }
 
-    func displayUpdate(_ viewModel: Main.InitForm.ViewModel) {
-        dataSource = viewModel
-        collectionView.reloadData()
-    }
-
-    func displayAppend(_ viewModel: Main.InitForm.ViewModel) {
-        dataSource = viewModel
+    func displayAppend(_ viewModel: [Main.InitForm.ViewModel], indexPaths: [IndexPath]) {
+        dataSource[.top]?.append(contentsOf: viewModel)
+        collectionView.reloadItems(at: indexPaths)
     }
 
     // MARK: - Private
@@ -72,28 +72,28 @@ final class MainViewController: UIViewController, MainDisplayLogic {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dataSource.sections.count
+        return dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0: return dataSource.sections[.new]?.count ?? 0
-        case 1: return dataSource.sections[.top]?.count ?? 0
-        default: return 0
+        guard let sectionType = Main.SortType(rawValue: section) else {
+            return 0
+
         }
+        return dataSource[sectionType]?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
         let type: Main.SortType = indexPath.section == 0 ? .new : .top
-        guard let data = dataSource.sections[type]?[indexPath.row] else { return cell }
+        guard let data = dataSource[type]?[indexPath.row] else { return cell }
         cell.setup(name: data.title, imageUrl: data.poster, genre: data.genre)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == (dataSource.sections[.top]?.count ?? 0) - 2 && indexPath.section == 1 {
-            interactor.update()
+        if indexPath.row == (dataSource[.top]?.count ?? 0) - 2 && indexPath.section == 1 {
+            interactor.update(indexPaths: [indexPath])
         }
     }
 }
@@ -102,7 +102,7 @@ extension MainViewController: UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
 
-        collectionView.reloadItems(at: indexPaths)
+//        interactor.update(indexPaths: indexPaths)
     }
 
 
