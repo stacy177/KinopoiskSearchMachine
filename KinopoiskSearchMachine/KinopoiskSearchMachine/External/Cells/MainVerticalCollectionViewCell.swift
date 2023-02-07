@@ -23,6 +23,13 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        genreLabel.text = nil
+        imageView.image = nil
+    }
+    
     func setup(name: String?, image: UIImage?, genre: String?) {
         titleLabel.text = name
         genreLabel.text = genre
