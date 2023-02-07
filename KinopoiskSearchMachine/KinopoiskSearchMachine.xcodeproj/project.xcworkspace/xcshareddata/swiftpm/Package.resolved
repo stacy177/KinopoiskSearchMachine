@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "kingfisher?ysclid=ldukqqc7ek805309951",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher?ysclid=ldukqqc7ek805309951",
+      "state" : {
+        "revision" : "2db469112fbcfd83ff0a96c4546772d283f317f5",
+        "version" : "7.6.0"
+      }
+    },
+    {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Moya/Moya.git",

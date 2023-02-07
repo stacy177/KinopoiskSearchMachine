@@ -4,6 +4,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class MainVerticalCollectionViewCell: UICollectionViewCell {
 
@@ -30,10 +31,10 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
     }
     
-    func setup(name: String?, image: UIImage?, genre: String?) {
+    func setup(name: String?, image: String?, genre: String?) {
         titleLabel.text = name
         genreLabel.text = genre
-        imageView.image = image
+        imageView.kf.setImage(with: URL(string: image ?? ""))
     }
     
     private func setupUI() {

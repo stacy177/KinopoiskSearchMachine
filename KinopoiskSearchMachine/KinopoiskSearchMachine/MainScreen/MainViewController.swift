@@ -4,6 +4,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol MainDisplayLogic: AnyObject {
     func displayInit(_ viewModelDict: [Main.SortType: [Main.InitForm.ViewModel]])
@@ -88,13 +89,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
         let type: Main.SortType = indexPath.section == 0 ? .new : .top
         guard let data = dataSource[type]?[indexPath.row] else { return cell }
-//        DispatchQueue.global(qos: .default).async {
-            self.imadeLoader.download(imageUrl: data.poster) { [weak cell, data] result in
-                DispatchQueue.main.async {
-                    cell?.setup(name: data.title, image: result, genre: data.genre)
-                }
-//            }
-        }
+        cell.setup(name: data.title, image: data.poster, genre: data.genre)
         return cell
     }
 
@@ -108,10 +103,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-//        for indexPath in indexPaths {
-//            interactor.update(indexPaths: indexPaths)
-//        }
-
     }
 
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {

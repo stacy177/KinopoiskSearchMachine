@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D4306B32992686000071757 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B22992686000071757 /* MainWorker.swift */; };
 		5D4306B529927E0E00071757 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B429927E0E00071757 /* ImageDownloader.swift */; };
+		5D4306B82992CFA900071757 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D4306B72992CFA900071757 /* Kingfisher */; };
 		5D62EE7F2981995100C146BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D62EE7E2981995100C146BB /* SnapKit */; };
 		5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */; };
 		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
@@ -118,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4306B82992CFA900071757 /* Kingfisher in Frameworks */,
 				5D62EE8B2986A60A00C146BB /* Moya in Frameworks */,
 				5D62EE7F2981995100C146BB /* SnapKit in Frameworks */,
 			);
@@ -288,6 +290,7 @@
 			packageProductDependencies = (
 				5D62EE7E2981995100C146BB /* SnapKit */,
 				5D62EE8A2986A60A00C146BB /* Moya */,
+				5D4306B72992CFA900071757 /* Kingfisher */,
 			);
 			productName = KinopoiskSearchMachine;
 			productReference = 5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */;
@@ -364,6 +367,7 @@
 			packageReferences = (
 				5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5D62EE892986A60A00C146BB /* XCRemoteSwiftPackageReference "Moya" */,
+				5D4306B62992CFA900071757 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5DC8F33229805AE400F8750D /* Products */;
 			projectDirPath = "";
@@ -539,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -594,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -611,7 +615,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P99KL2FGYB;
+				DEVELOPMENT_TEAM = YM5258CN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -639,7 +643,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P99KL2FGYB;
+				DEVELOPMENT_TEAM = YM5258CN94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopoiskSearchMachine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -778,6 +782,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D4306B62992CFA900071757 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher?ysclid=ldukqqc7ek805309951";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -797,6 +809,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D4306B72992CFA900071757 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D4306B62992CFA900071757 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		5D62EE7E2981995100C146BB /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */;
