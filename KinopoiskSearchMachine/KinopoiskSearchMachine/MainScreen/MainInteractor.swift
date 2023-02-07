@@ -2,7 +2,7 @@
 //  MainInteractor.swift
 //
 
-import Foundation
+import UIKit
 import Moya
 
 protocol MainBusinessLogic {
@@ -74,3 +74,4 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
         return response
     }
 }
+

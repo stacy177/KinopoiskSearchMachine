@@ -10,6 +10,7 @@ enum MovieType {
     case newMovies(page: Int)
     case searchMovies(name: String)
     case detailMovie(id: Int)
+//    case getImage(url: String)
 }
 
 extension MovieType: TargetType {

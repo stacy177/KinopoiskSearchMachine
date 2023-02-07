@@ -23,25 +23,12 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(name: String?, imageUrl: String?, genre: String?) {
+    func setup(name: String?, image: UIImage?, genre: String?) {
         titleLabel.text = name
         genreLabel.text = genre
-        guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else { return }
-        loadImage(url: url)
+        imageView.image = image
     }
-
-    private func loadImage(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.imageView.image = image
-                    }
-                }
-            }
-        }
-    }
-
+    
     private func setupUI() {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)

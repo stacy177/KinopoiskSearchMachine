@@ -18,7 +18,6 @@ final class MainPresenter: MainPresentationLogic {
         response.forEach { type, value in
             result[type] = convertToVm(response: value)
         }
-
         view?.displayInit(result)
     }
 
@@ -31,24 +30,4 @@ final class MainPresenter: MainPresentationLogic {
         let vm = response.map { Main.InitForm.ViewModel(poster: $0.imageUrl, title: $0.title, year: $0.year, genre: $0.genre, id: $0.id) }
         return vm
     }
-    
-//    var viewModel: Main.InitForm.ViewModel = .init(sections: [.new: [], .top: []])
-//
-//    func appendMovies(_ response: [Main.InitForm.Response], type: Main.SortType) {
-//        let sectionMovies = response.map {
-//            Main.MovieData(poster: $0.imageUrl, title: $0.title, year: $0.year, genre: $0.genre, id: $0.id)
-//        }
-//        viewModel.sections[type]?.append(contentsOf: sectionMovies)
-//
-//        view?.displayUpdate(viewModel)
-//    }
-//
-//    func appendTopMovies(_ response: [Main.InitForm.Response]) {
-//        let sectionMovies = response.map {
-//            Main.MovieData(poster: $0.imageUrl, title: $0.title, year: $0.year, genre: $0.genre, id: $0.id)
-//        }
-//        viewModel.sections[.top]?.append(contentsOf: sectionMovies)
-//
-//        view?.displayAppend(viewModel)
-//    }
 }

@@ -9,6 +9,7 @@ enum MainAssembly {
         let presenter = MainPresenter()
         let interactor = MainInteractor(presenter: presenter)
         let router = MainRouter(dataStore: interactor)
+//        let worker = MainWorker()
         let viewController = MainViewController(interactor: interactor, router: router)
 
         presenter.view = viewController

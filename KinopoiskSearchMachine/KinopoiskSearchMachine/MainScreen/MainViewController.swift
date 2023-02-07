@@ -16,6 +16,7 @@ final class MainViewController: UIViewController, MainDisplayLogic {
     
     private let interactor: MainBusinessLogic
     private let router: MainRoutingLogic
+    private let imadeLoader = ImageLoader()
 
     private var dataSource: [Main.SortType: [Main.InitForm.ViewModel]] = [:]
     
@@ -87,7 +88,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainVerticalCollectionViewCell.identifier, for: indexPath) as! MainVerticalCollectionViewCell
         let type: Main.SortType = indexPath.section == 0 ? .new : .top
         guard let data = dataSource[type]?[indexPath.row] else { return cell }
-        cell.setup(name: data.title, imageUrl: data.poster, genre: data.genre)
+        imadeLoader.download(imageUrl: data.poster) { [weak cell, data] result in
+            cell?.setup(name: data.title, image: result, genre: data.genre)
+        }
         return cell
     }
 

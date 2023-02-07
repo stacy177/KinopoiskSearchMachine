@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4306B32992686000071757 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B22992686000071757 /* MainWorker.swift */; };
+		5D4306B529927E0E00071757 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B429927E0E00071757 /* ImageLoader.swift */; };
 		5D62EE7F2981995100C146BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D62EE7E2981995100C146BB /* SnapKit */; };
 		5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */; };
 		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D4306B22992686000071757 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		5D4306B429927E0E00071757 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVerticalCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D62EE8629855F7300C146BB /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				72973769298065E500A93960 /* MainViewController.swift */,
 				7297376C298065E500A93960 /* MainInteractor.swift */,
 				72973765298065E500A93960 /* MainPresenter.swift */,
+				5D4306B22992686000071757 /* MainWorker.swift */,
 				72973767298065E500A93960 /* MainRouter.swift */,
 				72973768298065E500A93960 /* MainModels.swift */,
 				7297376B298065E500A93960 /* MainAssembly.swift */,
@@ -259,6 +264,7 @@
 				7297379A2986D54200A93960 /* Movies.swift */,
 				7297379D2986D70D00A93960 /* MovieType.swift */,
 				7297379F2986DF1900A93960 /* NetworkManager.swift */,
+				5D4306B429927E0E00071757 /* ImageLoader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -429,9 +435,11 @@
 				5D62EE8729855F7300C146BB /* CategoryHeaderView.swift in Sources */,
 				7297377F2980662700A93960 /* ActorSearchWorker.swift in Sources */,
 				729737962980668200A93960 /* GenreSearchInteractor.swift in Sources */,
+				5D4306B529927E0E00071757 /* ImageLoader.swift in Sources */,
 				729737932980668200A93960 /* GenreSearchViewController.swift in Sources */,
 				72973774298065E500A93960 /* MainInteractor.swift in Sources */,
 				729737922980668200A93960 /* GenreSearchModels.swift in Sources */,
+				5D4306B32992686000071757 /* MainWorker.swift in Sources */,
 				729737902980668200A93960 /* GenreSearchWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
