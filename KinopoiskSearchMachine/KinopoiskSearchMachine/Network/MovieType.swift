@@ -45,6 +45,7 @@ extension MovieType: TargetType {
                                                    "sortField": ["year", "votes.imdb"],
                                                    "sortType": ["1", "-1"],
                                                    "page": "\(page)",
+                                                   "limit": "20",
                                                    "token": token],
                                       encoding: URLEncoding.queryString) // correction is needed
         case .newMovies(page: let page):
@@ -53,6 +54,7 @@ extension MovieType: TargetType {
                                                    "sortField": ["year", "votes.imdb"],
                                                    "sortType": ["1", "1"],
                                                    "page": "\(page)",
+                                                   "limit": "20",
                                                    "token": token],
                                       encoding: URLEncoding.queryString)
         case .detailMovie(id: let id):

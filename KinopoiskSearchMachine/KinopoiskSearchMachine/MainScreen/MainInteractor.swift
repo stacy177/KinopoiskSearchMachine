@@ -52,10 +52,11 @@ final class MainInteractor: MainBusinessLogic, MainDataStore {
     }
 
     func update(indexPaths: [IndexPath]) {
-        page += 1
+//        page += 1
         NetworkManager.getTopSeries(page: page) { result in
             switch result {
             case .success(let movies):
+                self.page += 1
                 let response = self.convertToResponse(movies: movies)
                 DispatchQueue.main.async {
                     self.presenter.appendMovies(response, indexPaths: indexPaths)

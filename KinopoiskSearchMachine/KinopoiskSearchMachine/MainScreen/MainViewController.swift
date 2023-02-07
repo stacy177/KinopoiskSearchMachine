@@ -99,7 +99,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == (dataSource[.top]?.count ?? 0) - 2 && indexPath.section == 1 {
+        if indexPath.row == (dataSource[.top]?.count ?? 0) - 10 && indexPath.section == 1 {
             interactor.update(indexPaths: [indexPath])
         }
     }
@@ -108,9 +108,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+//        for indexPath in indexPaths {
+//            interactor.update(indexPaths: indexPaths)
+//        }
 
-//        interactor.update(indexPaths: indexPaths)
     }
 
-
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        //
+    }
 }
