@@ -16,7 +16,7 @@ enum MovieType {
 extension MovieType: TargetType {
 
     var token: String {
-        "T5H8AEE-SS4M01M-J9VSWP7-ZN88HGK"
+        "NTZ55BJ-9P74PBB-MTK68E3-700BZ2Y"
     }
 
     var baseURL: URL {
