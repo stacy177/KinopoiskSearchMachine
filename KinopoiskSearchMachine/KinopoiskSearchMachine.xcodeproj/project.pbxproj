@@ -10,6 +10,7 @@
 		5D4306B32992686000071757 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B22992686000071757 /* MainWorker.swift */; };
 		5D4306B529927E0E00071757 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4306B429927E0E00071757 /* ImageDownloader.swift */; };
 		5D4306B82992CFA900071757 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5D4306B72992CFA900071757 /* Kingfisher */; };
+		5D4306BB2993E14400071757 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 5D4306BA2993E14400071757 /* SkeletonView */; };
 		5D62EE7F2981995100C146BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D62EE7E2981995100C146BB /* SnapKit */; };
 		5D62EE812982B1D100C146BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE802982B1D100C146BB /* SearchTableViewCell.swift */; };
 		5D62EE832982B1E900C146BB /* MainVerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62EE822982B1E900C146BB /* MainVerticalCollectionViewCell.swift */; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4306BB2993E14400071757 /* SkeletonView in Frameworks */,
 				5D4306B82992CFA900071757 /* Kingfisher in Frameworks */,
 				5D62EE8B2986A60A00C146BB /* Moya in Frameworks */,
 				5D62EE7F2981995100C146BB /* SnapKit in Frameworks */,
@@ -291,6 +293,7 @@
 				5D62EE7E2981995100C146BB /* SnapKit */,
 				5D62EE8A2986A60A00C146BB /* Moya */,
 				5D4306B72992CFA900071757 /* Kingfisher */,
+				5D4306BA2993E14400071757 /* SkeletonView */,
 			);
 			productName = KinopoiskSearchMachine;
 			productReference = 5DC8F33129805AE400F8750D /* KinopoiskSearchMachine.app */;
@@ -368,6 +371,7 @@
 				5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5D62EE892986A60A00C146BB /* XCRemoteSwiftPackageReference "Moya" */,
 				5D4306B62992CFA900071757 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5D4306B92993E14400071757 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 5DC8F33229805AE400F8750D /* Products */;
 			projectDirPath = "";
@@ -790,6 +794,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		5D4306B92993E14400071757 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5D62EE7D2981995100C146BB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -813,6 +825,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D4306B62992CFA900071757 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5D4306BA2993E14400071757 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D4306B92993E14400071757 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		5D62EE7E2981995100C146BB /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

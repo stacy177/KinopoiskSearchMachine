@@ -32,6 +32,11 @@ final class MainVerticalCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(name: String?, image: String?, genre: String?) {
+        self.isSkeletonable = true
+        self.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .black, secondaryColor: .darkGray), animation: nil, transition: .crossDissolve(1))
+        
+        self.stopSkeletonAnimation()
+        self.hideSkeleton(reloadDataAfter: false, transition: .crossDissolve(1))
         titleLabel.text = name
         genreLabel.text = genre
         imageView.kf.setImage(with: URL(string: image ?? ""))
